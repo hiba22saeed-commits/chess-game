@@ -14,6 +14,6 @@ Technologies Used
 C++
 Object-Oriented Programming (OOP)
 # Group Members
-Hiba Saeed
-Qaima Maryum
-Zunaira Ahmed
+- Hiba Saeed
+- Qaima Maryum
+- Zunaira Ahmed
