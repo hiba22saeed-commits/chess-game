@@ -1,9 +1,5 @@
 # Chess Game (C++)
 
-<p align="center">
-  <img src="https://github.com/hiba22saeed-commits/chess-game/blob/b380c87d40d86fb564632fb0cb0b06f980050244/chessPic.png" alt="Chess Game" width="600"/>
-</p>
-
 ## Overview
 
 This project is a console-based implementation of the classic Chess Game, developed in C++ using all major pillars of Object-Oriented Programming (OOP). The game provides a complete two-player chess experience on an 8×8 board where each chess piece follows its standard movement rules and gameplay behavior.
@@ -46,6 +42,11 @@ encapsulation)**
 - Abstraction  
 
 ---
+##Console Output
+<p align="center">
+  <img src="https://github.com/hiba22saeed-commits/chess-game/blob/b380c87d40d86fb564632fb0cb0b06f980050244/chessPic.png" alt="Chess Game" width="600"/>
+</p>
+
 
 ## Group Members
 
