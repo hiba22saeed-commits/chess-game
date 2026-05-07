@@ -109,7 +109,7 @@ void Board::initializeBoard() {
 void Board::display() const {
     cout << "\n";
     cout << FG_CYAN BOLD "   a  b  c  d  e  f  g  h\n" RESET;
-    cout << FG_CYAN "  +--+--+--+--+--+--+--+--+\n" RESET;
+   
 
     for (int r = 0; r < 8; r++) {
         cout << FG_CYAN BOLD << (8 - r) << " " RESET;
@@ -133,11 +133,10 @@ void Board::display() const {
 
         cout << FG_CYAN BOLD " " << (8 - r) << "\n" RESET;
 
-        if (r < 7)
-            cout << FG_CYAN "  +--+--+--+--+--+--+--+--+\n" RESET;
+      
     }
 
-    cout << FG_CYAN "  +--+--+--+--+--+--+--+--+\n" RESET;
+   
     cout << FG_CYAN BOLD "   a  b  c  d  e  f  g  h\n\n" RESET;
 }
 
