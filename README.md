@@ -42,7 +42,7 @@ encapsulation)**
 - Abstraction  
 
 ---
-##Console Output
+## Console Output
 <p align="center">
   <img src="https://github.com/hiba22saeed-commits/chess-game/blob/b380c87d40d86fb564632fb0cb0b06f980050244/chessPic.png" alt="Chess Game" width="600"/>
 </p>
