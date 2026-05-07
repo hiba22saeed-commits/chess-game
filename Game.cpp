@@ -170,9 +170,19 @@ bool Game::run() {
 }
 
 bool Game::askPlayAgain() const {
-    cout << FG_CYAN BOLD "\n  Play again? " RESET
-        << FG_GREEN "[y]" RESET "/" FG_RED "[n]" RESET ": ";
     string ans;
-    getline(cin, ans);
-    return (!ans.empty() && (ans[0] == 'y' || ans[0] == 'Y'));
+
+    while (true) {
+        cout << FG_CYAN BOLD "\n  Play again? " RESET
+            << FG_GREEN "[y]" RESET "/" FG_RED "[n]" RESET ": ";
+
+        getline(cin, ans);
+
+        if (ans == "y" || ans == "Y")
+            return true;
+        else if (ans == "n" || ans == "N")
+            return false;
+        else
+            cout << "Invalid input. Please enter only y/Y or n/N.\n";
+    }
 }
