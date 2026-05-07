@@ -34,10 +34,10 @@ The game continuously validates moves, prevents illegal actions, and detects imp
 ## Technologies Used
 
 - **C++**
-- **Object-Oriented Programming (OOP)**
+- **Object-Oriented Programming (classes, objects, inheritance, polymorphism, composition, and
+encapsulation)**
 
 ---
-
 ## OOP Concepts Implemented
 
 - Encapsulation  
