@@ -51,5 +51,5 @@ encapsulation)**
 ## Group Members
 
 - Hiba Saeed  
-- Qaima Maryum  
+- Qaima Maryam  
 - Zunaira Ahmed  
