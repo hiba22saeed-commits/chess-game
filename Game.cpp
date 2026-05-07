@@ -115,60 +115,66 @@ bool Game::run() {
         << RESET FG_CYAN "  (from -> to)\n";
     cout << FG_CYAN "  Type " FG_RED BOLD "'quit'" RESET FG_CYAN " to exit.\n\n" RESET;
 
+  bool Game::run() {
+    cout << BG_MENU FG_YELLOW BOLD;
+    cout << "\n============================================\n";
+    cout << "          Welcome to C++ Chess!           \n";
+    cout << "============================================\n";
+    cout << RESET;
+    cout << FG_CYAN "  Enter moves as: " FG_GREEN BOLD "e2 e4"
+        << RESET FG_CYAN "  (from -> to)\n";
+    cout << FG_CYAN "  Type " FG_RED BOLD "'quit'" RESET FG_CYAN " to exit.\n\n" RESET;
+
+    // Display once before the loop starts
+    board.display();
+
     while (true) {
-        // MEMBER 1: Show the current board state
-        board.display();
+        // REMOVED: board.display() from here
 
         cout << (whiteTurn ? FG_WHITE_P " White" : FG_BLACK_P " Black")
             << RESET FG_CYAN " to move" RESET ": ";
         string input;
         getline(cin, input);
 
-        // MEMBER 1: Quit command
         if (input == "quit" || input == "q") {
             cout << FG_CYAN "Thanks for playing!\n" RESET;
             return false;
         }
 
-        // MEMBER 1: Input format validation
         if (!isValidInput(input)) {
             cout << "Invalid format. Use: e2 e4  (column a-h, row 1-8)\n";
-            continue;
+            continue;   // re-prompt, NO board redraw
         }
 
-        // MEMBER 1: Parse "e2 e4" -> board indices
         int fr, fc, tr, tc;
         parseInput(input, fr, fc, tr, tc);
 
-        // MEMBER 1: Check a piece exists at source
         Piece* p = board.getPiece(fr, fc);
         if (!p) {
             cout << "No piece at that square.\n";
-            continue;
+            continue;   // re-prompt, NO board redraw
         }
 
-        // MEMBER 1: Check the piece belongs to the current player
         if (p->getColor() != whiteTurn) {
             cout << "That is not your piece.\n";
-            continue;
+            continue;   // re-prompt, NO board redraw
         }
 
-        // MEMBER 3: Board::movePiece enforces all move-validation rules:
-        //   bounds, geometry, path clear, no friendly-fire, no self-check
         if (!board.movePiece(fr, fc, tr, tc)) {
             cout << "Illegal move. Try again.\n";
-            continue;
+            continue;   // re-prompt, NO board redraw
         }
 
-        // MEMBER 1: Switch turns after a successful move
+        // Move succeeded -- switch turns, THEN redraw
         whiteTurn = !whiteTurn;
 
-        // MEMBER 3 (shared): Check for checkmate / stalemate / draw
+        // Redraw only after a valid move
+        board.display();
+
         if (checkGameOver())
             return askPlayAgain();
     }
 }
-
 bool Game::askPlayAgain() const {
     cout << FG_CYAN BOLD "\n  Play again? " RESET
         << FG_GREEN "[y]" RESET "/" FG_RED "[n]" RESET ": ";
